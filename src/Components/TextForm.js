@@ -111,24 +111,24 @@ function TextForm(props) {
     <div className="container" style={{color: props.mode==='dark'? 'white' : 'black'}}>
         <h1>{props.heading}</h1>
         <div className="mb-3">
-        <textarea className="form-control" onChange={handleOnChange} value={text} placeholder='Enter text here' style={{backgroundColor: props.mode==='dark'? '#0f2c63' : 'white', color: props.mode==='dark'? 'white' : 'black'}} id="myBox" rows="8"></textarea>
+        <textarea className="form-control" onChange={handleOnChange} value={text} placeholder='Enter text here' style={{backgroundColor: props.mode==='dark'? '#0f2c63' : 'white', color: props.mode==='dark'? 'white' : 'black'}} id="myBox" rows="6"></textarea>
         </div>
         <div className="flex-container">
-        <button className="btn btn-primary mx-1" onClick={handleUpClick}>{btnUPText}</button>
-        <button className="btn btn-primary mx-1" onClick={handleLwClick}>{btnLWText}</button>
-        <button className="btn btn-primary mx-1" onClick={handleClrClick}>{btnClrText}</button>
-        <button className="btn btn-primary mx-1" onClick={handleSpeakClick}>{btnSPText}</button>
-        <button className="btn btn-primary mx-1" onClick={handleCopy}>{btnCopyText}</button>
-        <button className="btn btn-primary mx-1" onClick={handleSpaces}>{btnRSText}</button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>{btnUPText}</button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleLwClick}>{btnLWText}</button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleClrClick}>{btnClrText}</button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleSpeakClick}>{btnSPText}</button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleCopy}>{btnCopyText}</button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleSpaces}>{btnRSText}</button>
         </div>
        
     </div>
     <div className="container my-3" style={{color: props.mode==='dark'? 'white' : 'black'}}>
       <h2>Your Text Summary</h2>
-      <p>{text.split(" ").length} words and {text.length} characters</p>
-      <p>{0.08 * text.split(" ").length} Minutes read</p>
+      <p>{text.split(" ").filter((element)=>{return element.length !==0}).length} words and {text.length} characters</p>
+      <p>{0.08 * text.split(" ").filter((value)=>{return value.length !==0}).length} Minutes read</p>
       <h2>Preview</h2>
-      <p>{text.length>0 ? text : 'Enter something to preview it'}</p>
+      <p>{text.length>0 ? text : 'Nothing to Preview!'}</p>
     </div>
     </>
   )

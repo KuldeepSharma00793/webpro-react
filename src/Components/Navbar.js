@@ -21,18 +21,18 @@ function Navbar(props) {
           <Link className="nav-link" to="/about">{aboutTitle}</Link>
         </li>
       </ul>
-      <div className="d-flex">
+      {/* <div className="d-flex">
         <div className="bg-primary rounded mx-2" style={{height:'30px',width: '30px', cursor : 'pointer'}} onClick={()=>{toggleMode('primary')}}></div>
         <div className="bg-success rounded mx-2" style={{height:'30px',width: '30px', cursor : 'pointer'}} onClick={()=>{toggleMode('success')}}></div>
         <div className="bg-danger rounded mx-2" style={{height:'30px',width: '30px', cursor : 'pointer'}} onClick={()=>{toggleMode('danger')}}></div>
         <div className="bg-warning rounded mx-2" style={{height:'30px',width: '30px', cursor : 'pointer'}} onClick={()=>{toggleMode('warning')}}></div>
         <div className="bg-dark rounded mx-2" style={{height:'30px',width: '30px', cursor : 'pointer'}} onClick={()=>{toggleMode('dark')}}></div>
         <div className="bg-light rounded mx-2" style={{height:'30px',width: '30px', cursor : 'pointer'}} onClick={()=>{toggleMode('light')}}></div>
-      </div>
-      {/* <div className={`form-check form-switch text-${props.mode ==='light'? 'dark' : 'light'}`}>
+      </div> */}
+      <div className={`form-check form-switch text-${props.mode ==='light'? 'dark' : 'light'}`}>
       <input className="form-check-input" onClick={()=>{toggleMode(null)}} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
       <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
-    </div> */}
+    </div>
     </div>
   </div>
 </nav>
