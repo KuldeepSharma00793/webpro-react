@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import "./App.css";
-import About from "./Components/About";
+// import About from "./Components/About";
 import Navbar from "./Components/Navbar";
 import Alert from "./Components/Alert";
 import TextForm from "./Components/TextForm";
@@ -40,21 +40,22 @@ function App() {
 
   return (
     <>
-    <Router>
+    {/* <Router> */}
       <Navbar title="TextUtils" aboutTitle="About us" mode={mode} toggleMode={toggleFunction}/>
         <Alert alert={alertMe} />
       <div className="container my-3">
         {/* users ---> Component 1
         /users/home ---> Component 2 */}
-        <Routes>
-          <Route exact path='/' element={<TextForm heading="Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" mode={mode} showAlert={showAlert} />}/>
-          <Route exact path='/about' element={<About mode={mode}/>}/>
-          <Route path="*" element={<p>Path not resolved</p>} />
-        </Routes>
+        {/* <Routes> */}
+          {/* <Route exact path='/' element={<TextForm heading="Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" mode={mode} showAlert={showAlert} />}/> */}
+          {/* <Route exact path='/about' element={<About mode={mode}/>}/> */}
+          {/* <Route path="*" element={<p>Path not resolved</p>} /> */}
+          <TextForm heading="Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" mode={mode} showAlert={showAlert} />
+        {/* </Routes> */}
         {/* <TextForm heading="Enter the text to analyze" mode={mode} showAlert={showAlert} /> */}
         {/* <Practice/> */}
         </div>
-    </Router>
+    {/* </Router> */}
     </>
   );
 }
